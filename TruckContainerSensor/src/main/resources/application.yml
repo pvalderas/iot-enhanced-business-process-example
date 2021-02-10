@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: TruckContainer
+    
+server:
+  port: 8091
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:2222/eureka
+  instance:
+    metadataMap:
+      connectionType: synchronous

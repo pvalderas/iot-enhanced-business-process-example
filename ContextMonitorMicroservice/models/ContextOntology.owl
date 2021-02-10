@@ -1,0 +1,938 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:pervml="http://www.pros.com/pervml.owl#"
+    xmlns:ns_28="http://www.oomethod.com/pervml.owl#"
+    xmlns:pros2="http://www.owl-ontologies.com/unnamed.owl#http://pros.upv.es/"
+    xmlns:GoingOut_2010-06-10T09="http://www.pros.com/GoingOut_2010-06-10T09:00:00"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:owl11="http://www.w3.org/2006/12/owl11#"
+    xmlns:owl11xml="http://www.w3.org/2006/12/owl11-xml#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:WakingUp_2010-06-10T07="http://www.pros.com/WakingUp_2010-06-10T07:50:00"
+    xmlns:pros="http://www.pros.com/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:unnamed="http://www.owl-ontologies.com/unnamed.owl#"
+  xml:base="http://www.pros.com/">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:about="http://www.pros.com/Argument">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.pros.com/NamedElement"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/Device">
+    <rdfs:subClassOf rdf:resource="http://www.pros.com/NamedElement"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/TimeInstant">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.pros.com/TemporalEntity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/TemporalEvent">
+    <rdfs:subClassOf rdf:resource="http://www.pros.com/TimeInstant"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.pros.com/Event"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/ExecutedOperation">
+    <rdfs:subClassOf rdf:resource="http://www.pros.com/TemporalEvent"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/BehaviourPattern"/>
+  <owl:Class rdf:about="http://www.pros.com/AutomaticOperation">
+    <owl:disjointWith rdf:resource="http://www.pros.com/ExecutedOperation"/>
+    <rdfs:subClassOf rdf:resource="http://www.pros.com/ExecutedOperation"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/UserProperty">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.pros.com/ValueElement"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/DerivedEnvironmentProperty">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.pros.com/EnvironmentProperty"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/TimeInterval">
+    <rdfs:subClassOf rdf:resource="http://www.pros.com/TemporalEntity"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/EnvironmentProperty">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.pros.com/ValueElement"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/Person"/>
+  <owl:Class rdf:about="http://www.pros.com/Policy">
+    <rdfs:subClassOf rdf:resource="http://www.pros.com/NamedElement"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/DetectedChange">
+    <rdfs:subClassOf rdf:resource="http://www.pros.com/TemporalEvent"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/DeviceEvent">
+    <rdfs:subClassOf rdf:resource="http://www.pros.com/Event"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/OperationExecutedByPerson">
+    <rdfs:subClassOf rdf:resource="http://www.pros.com/ExecutedOperation"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/Preference">
+    <rdfs:subClassOf rdf:resource="http://www.pros.com/UserProperty"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/ServiceProperty">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.pros.com/ValueElement"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/TemporalProperty">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.pros.com/ValueElement"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/ValueElement">
+    <rdfs:subClassOf rdf:resource="http://www.pros.com/NamedElement"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/Skill">
+    <rdfs:subClassOf rdf:resource="http://www.pros.com/UserProperty"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:Class rdf:about="http://www.pros.com/Operation">
+    <rdfs:subClassOf rdf:resource="http://www.pros.com/NamedElement"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/ServiceCategory">
+    <rdfs:subClassOf rdf:resource="http://www.pros.com/NamedElement"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/Parameter">
+    <rdfs:subClassOf rdf:resource="http://www.pros.com/ValueElement"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/DerivedTemporalProperty">
+    <rdfs:subClassOf rdf:resource="http://www.pros.com/TemporalProperty"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/Service">
+    <rdfs:subClassOf rdf:resource="http://www.pros.com/NamedElement"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/Location">
+    <rdfs:subClassOf rdf:resource="http://www.pros.com/NamedElement"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.pros.com/ContactData"/>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/parameters">
+    <rdfs:range rdf:resource="http://www.pros.com/Parameter"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/ExecutedOperation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/mobilityTo">
+    <rdfs:range rdf:resource="http://www.pros.com/Location"/>
+    <owl:inverseOf rdf:resource="http://www.pros.com/mobilityTo"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/Location"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/skills">
+    <rdfs:domain rdf:resource="http://www.pros.com/Person"/>
+    <rdfs:range rdf:resource="http://www.pros.com/Skill"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/serviceCategory">
+    <rdfs:domain rdf:resource="http://www.pros.com/Service"/>
+    <rdfs:range rdf:resource="http://www.pros.com/ServiceCategory"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.pros.com/categoryServices"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/allowedOperations">
+    <rdfs:domain rdf:resource="http://www.pros.com/Policy"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/isRelatedWith">
+    <rdfs:range rdf:resource="http://www.pros.com/Person"/>
+    <owl:inverseOf rdf:resource="http://www.pros.com/isRelatedWith"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/policyApplied">
+    <rdfs:range rdf:resource="http://www.pros.com/Policy"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/Person"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/environmentProperty">
+    <rdfs:domain rdf:resource="http://www.pros.com/DetectedChange"/>
+    <rdfs:range rdf:resource="http://www.pros.com/EnvironmentProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/personLocatedIn">
+    <rdfs:domain rdf:resource="http://www.pros.com/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.pros.com/Location"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.pros.com/persons"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/parent">
+    <rdfs:range rdf:resource="http://www.pros.com/Location"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/Location"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.pros.com/childrenLocations"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/executedOperation">
+    <rdfs:range rdf:resource="http://www.pros.com/Operation"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/ExecutedOperation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/hasArguments">
+    <rdfs:domain rdf:resource="http://www.pros.com/Operation"/>
+    <rdfs:range rdf:resource="http://www.pros.com/Argument"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/returnValue">
+    <rdfs:domain rdf:resource="http://www.pros.com/ExecutedOperation"/>
+    <rdfs:range rdf:resource="http://www.pros.com/Parameter"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/childrenLocations">
+    <owl:inverseOf rdf:resource="http://www.pros.com/parent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/Location"/>
+    <rdfs:range rdf:resource="http://www.pros.com/Location"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/contactData">
+    <rdfs:domain rdf:resource="http://www.pros.com/Person"/>
+    <rdfs:range rdf:resource="http://www.pros.com/ContactData"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/isAdjacentTo">
+    <rdfs:range rdf:resource="http://www.pros.com/Location"/>
+    <owl:inverseOf rdf:resource="http://www.pros.com/isAdjacentTo"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/Location"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/environmentProperties">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.pros.com/environmentPropertiesLocatedIn"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="http://www.pros.com/EnvironmentProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.pros.com/DerivedEnvironmentProperty"/>
+          <owl:Class rdf:about="http://www.pros.com/Location"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/operations">
+    <rdfs:domain rdf:resource="http://www.pros.com/Service"/>
+    <rdfs:range rdf:resource="http://www.pros.com/Operation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/environmentPropertiesLocatedIn">
+    <owl:inverseOf rdf:resource="http://www.pros.com/environmentProperties"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/EnvironmentProperty"/>
+    <rdfs:range rdf:resource="http://www.pros.com/Location"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/argument">
+    <rdfs:domain rdf:resource="http://www.pros.com/Parameter"/>
+    <rdfs:range rdf:resource="http://www.pros.com/Argument"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/userProperties">
+    <rdfs:range rdf:resource="http://www.pros.com/UserProperty"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/Person"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/preferences">
+    <rdfs:range rdf:resource="http://www.pros.com/Preference"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/Person"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/categoryServices">
+    <rdfs:range rdf:resource="http://www.pros.com/Service"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/ServiceCategory"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/executedBy">
+    <rdfs:range rdf:resource="http://www.pros.com/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/ExecutedOperation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/persons">
+    <owl:inverseOf rdf:resource="http://www.pros.com/personLocatedIn"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/Location"/>
+    <rdfs:range rdf:resource="http://www.pros.com/Person"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.pros.com/executedPattern">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/AutomaticOperation"/>
+    <rdfs:range rdf:resource="http://www.pros.com/BehaviourPattern"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.pros.com/webPage">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/Person"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.pros.com/queryInference">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.pros.com/DerivedEnvironmentProperty"/>
+          <owl:Class rdf:about="http://www.pros.com/DerivedTemporalProperty"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >la regla swrl que se debe ejecutar para obtener el valor de esa propiedad</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.pros.com/userLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/Person"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.pros.com/question">
+    <rdfs:domain rdf:resource="http://www.pros.com/Skill"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >indicaría la pregunta que se le debería hacer al usuario para darle valor a esa habilidad</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.pros.com/type">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/ValueElement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.pros.com/email">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/ContactData"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.pros.com/pervml.owl#time">
+    <rdfs:domain rdf:resource="http://www.pros.com/TemporalEvent"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.pros.com/urgentTasks">
+    <rdfs:domain rdf:resource="http://www.pros.com/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.pros.com/adress">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/ContactData"/>
+  </owl:DatatypeProperty>
+  <owl:FunctionalProperty rdf:about="http://www.pros.com/pervml.owl#timeString">
+    <rdfs:domain rdf:resource="http://www.pros.com/TimeInstant"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.pros.com/brightness">
+    <rdfs:domain rdf:resource="http://www.pros.com/Location"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.pros.com/id">
+    <rdfs:domain rdf:resource="http://www.pros.com/BehaviourPattern"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.pros.com/value">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/ValueElement"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.pros.com/name">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.pros.com/NamedElement"/>
+          <owl:Class rdf:about="http://www.pros.com/Person"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.pros.com/time">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#time"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.pros.com/Policy"/>
+          <owl:Class rdf:about="http://www.pros.com/Event"/>
+          <owl:Class rdf:about="http://www.pros.com/TemporalEntity"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.pros.com/locatedIn">
+    <owl:inverseOf>
+      <owl:InverseFunctionalProperty rdf:about="http://www.pros.com/services"/>
+    </owl:inverseOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/Service"/>
+    <rdfs:range rdf:resource="http://www.pros.com/Location"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.pros.com/maritalStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/Person"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.pros.com/confortTemp">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/Person"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.pros.com/login">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.pros.com/date">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.pros.com/Policy"/>
+          <owl:Class rdf:about="http://www.pros.com/Event"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.pros.com/state">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.pros.com/Service"/>
+          <owl:Class rdf:about="http://www.pros.com/Device"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.pros.com/password">
+    <rdfs:domain rdf:resource="http://www.pros.com/Person"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.pros.com/surname">
+    <rdfs:domain rdf:resource="http://www.pros.com/Person"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.pros.com/temperature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/Location"/>
+  </owl:FunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="http://www.pros.com/services">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.pros.com/Service"/>
+    <owl:inverseOf rdf:resource="http://www.pros.com/locatedIn"/>
+    <rdfs:domain rdf:resource="http://www.pros.com/Location"/>
+  </owl:InverseFunctionalProperty>
+  <pros:Preference rdf:about="http://www.pros.com/LightIntensityLevel">
+    <pros:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >high</pros:value>
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >LightIntensityLevel</pros:name>
+    <pros:type rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >String</pros:type>
+  </pros:Preference>
+  <pros:ExecutedOperation rdf:about="http://www.owl-ontologies.com/unnamed.owl#Off_kitchenLighting_3">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Off_kitchenLighting_3</pros:name>
+  </pros:ExecutedOperation>
+  <pros:ExecutedOperation rdf:about="http://www.owl-ontologies.com/unnamed.owl#On_kitchenLighting_2">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >On_kitchenLighting_2</pros:name>
+  </pros:ExecutedOperation>
+  <pros:ServiceProperty rdf:about="http://www.pros.com/isAlarmThrown">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >isAlarmThrown</pros:name>
+  </pros:ServiceProperty>
+  <pros:TemporalProperty rdf:about="http://www.pros.com/workingDay">
+    <pros:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Monday</pros:value>
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >workingDay</pros:name>
+    <pros:type rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >String</pros:type>
+  </pros:TemporalProperty>
+  <pros:Event rdf:about="http://www.pros.com/pervml.owl#add">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Carlos</pros:name>
+  </pros:Event>
+  <pros:ExecutedOperation rdf:about="http://www.owl-ontologies.com/unnamed.owl#Off_kitchenLighting_2">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >On_kitchenLighting_2</pros:name>
+  </pros:ExecutedOperation>
+  <pros:DetectedChange rdf:about="http://www.owl-ontologies.com/unnamed.owl#NM1_low_2009-09-17T19:40:08Z">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NM1</pros:name>
+  </pros:DetectedChange>
+  <pros:ExecutedOperation rdf:about="http://www.owl-ontologies.com/unnamed.owl#On_kitchenLighting_3">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >On_kitchenLighting_3</pros:name>
+  </pros:ExecutedOperation>
+  <pros:DetectedChange rdf:about="http://www.owl-ontologies.com/unnamed.owl#TIMER_true_2009-09-17T19:40:55Z">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TIMER</pros:name>
+  </pros:DetectedChange>
+  <pros:TimeInstant rdf:about="http://www.pros.com/pervml.owl#CurrentTime">
+    <pros:time rdf:datatype="http://www.w3.org/2001/XMLSchema#time"
+    >07:50:00</pros:time>
+    <pervml:timeString rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >07:50</pervml:timeString>
+  </pros:TimeInstant>
+  <pros:DetectedChange rdf:about="http://www.owl-ontologies.com/unnamed.owl#NoiseLevel_2009-06-01T11_20_48">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NoiseLevel</pros:name>
+  </pros:DetectedChange>
+  <pros:DetectedChange rdf:about="http://www.owl-ontologies.com/unnamed.owl#NoiseLevel_2009-06-01T11_36_02">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NoiseLevel</pros:name>
+  </pros:DetectedChange>
+  <pros:ExecutedOperation rdf:about="http://www.owl-ontologies.com/unnamed.owl#Off_kitchenLighting_1">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Off_kitchenLighting_1</pros:name>
+  </pros:ExecutedOperation>
+  <pros:ServiceCategory rdf:about="http://www.pros.com/Security">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Security</pros:name>
+  </pros:ServiceCategory>
+  <pros:TemporalProperty rdf:about="http://www.pros.com/timeProperty">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >time</pros:name>
+    <pros:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >08:00</pros:value>
+    <pros:type rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >time</pros:type>
+  </pros:TemporalProperty>
+  <pros:DetectedChange rdf:about="http://www.owl-ontologies.com/unnamed.owl#TIMER_true_2009-07-16T13:01:14Z">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TIMER</pros:name>
+  </pros:DetectedChange>
+  <pros:ExecutedOperation rdf:about="http://www.owl-ontologies.com/unnamed.owl#On_kitchenLighting_1">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >On_kitchenLighting_1</pros:name>
+  </pros:ExecutedOperation>
+  <pros:UserProperty rdf:about="http://www.pros.com/language">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >language</pros:name>
+    <pros:type rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >String</pros:type>
+    <pros:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >English</pros:value>
+  </pros:UserProperty>
+  <pros:TemporalEvent rdf:about="http://www.pros.com/pervml.owl#TemporalEvent_5"/>
+  <pros:DetectedChange rdf:about="http://www.owl-ontologies.com/unnamed.owl#NM1_low_2009-07-15T17:56:50Z">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NM1</pros:name>
+  </pros:DetectedChange>
+  <pros:DetectedChange rdf:about="http://www.owl-ontologies.com/unnamed.owl#NoiseLevel_2009-06-01T11_29_24">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NoiseLevel</pros:name>
+  </pros:DetectedChange>
+  <pros:BehaviourPattern rdf:about="http://www.pros.com/WakingUp">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >WakingUp</pros:name>
+    <pros:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >WakingUp</pros:id>
+  </pros:BehaviourPattern>
+  <pros:ServiceCategory rdf:about="http://www.pros.com/Sensors"/>
+  <pros:DetectedChange rdf:about="http://www.owl-ontologies.com/unnamed.owl#Kitchen_NM1_low_2009-06-19T13_11_25Z">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >KitchenNM1</pros:name>
+  </pros:DetectedChange>
+  <pros:DetectedChange rdf:about="http://www.owl-ontologies.com/unnamed.owl#NM1_high_2009-07-17T12:39:46Z">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NM1</pros:name>
+  </pros:DetectedChange>
+  <pros:DetectedChange rdf:about="http://www.owl-ontologies.com/unnamed.owl#NM1_low_2009-07-17T12:38:54Z">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NM1</pros:name>
+  </pros:DetectedChange>
+  <pros:ServiceProperty rdf:about="http://www.pros.com/isEnabled">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >isEnabled</pros:name>
+  </pros:ServiceProperty>
+  <pros:DetectedChange rdf:about="http://www.owl-ontologies.com/unnamed.owl#NM1_high_2009-06-19T13_23_10Z">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NM1</pros:name>
+  </pros:DetectedChange>
+  <pros:DetectedChange rdf:about="http://www.owl-ontologies.com/unnamed.owl#NM1_low_2009-07-15T18:09:13Z">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NM1</pros:name>
+  </pros:DetectedChange>
+  <pros:Argument rdf:about="http://www.pros.com/lightIntensity">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lightIntensity</pros:name>
+  </pros:Argument>
+  <pros:DetectedChange rdf:about="http://www.owl-ontologies.com/unnamed.owl#NM1_low_2009-07-15T18:08:45Z">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NM1</pros:name>
+  </pros:DetectedChange>
+  <pros:EnvironmentProperty rdf:about="http://www.pros.com/Traffic">
+    <pros:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NotBusy</pros:value>
+  </pros:EnvironmentProperty>
+  <pros:BehaviourPattern rdf:about="http://www.pros.com/GoingOut">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >GoingOut</pros:name>
+    <pros:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >GoingOut</pros:id>
+  </pros:BehaviourPattern>
+  <pros:ExecutedOperation rdf:about="http://www.owl-ontologies.com/unnamed.owl#On_kitchenLighting_4">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >On_kitchenLighting_4</pros:name>
+  </pros:ExecutedOperation>
+  <pros:ExecutedOperation rdf:about="http://www.owl-ontologies.com/unnamed.owl#Off_kitchenLighting_4">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Off_kitchenLighting_4</pros:name>
+  </pros:ExecutedOperation>
+  <pros:Operation rdf:about="http://www.pros.com/sendMessage">
+    <pros:hasArguments>
+      <pros:Argument rdf:about="http://www.pros.com/priority"/>
+    </pros:hasArguments>
+    <pros:hasArguments>
+      <pros:Argument rdf:about="http://www.pros.com/text"/>
+    </pros:hasArguments>
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sendMessage</pros:name>
+  </pros:Operation>
+  <pros:Argument rdf:about="http://www.pros.com/channel">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >channel</pros:name>
+  </pros:Argument>
+  <pros:DetectedChange rdf:about="http://www.owl-ontologies.com/unnamed.owl#NM1_high_2009-07-17T12:41:10Z">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NM1</pros:name>
+  </pros:DetectedChange>
+  <pros:Service rdf:about="http://www.pros.com/Recording">
+    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Recording</pros:name>
+    <pros:state rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >off</pros:state>
+    <pros:locatedIn>
+      <pros:Location rdf:about="http://www.pros.com/Home">
+        <pros:childrenLocations>
+          <pros:Location rdf:about="http://www.pros.com/Corridor">
+            <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Corridor</pros:name>
+            <pros:parent rdf:resource="http://www.pros.com/Home"/>
+            <pros:isAdjacentTo>
+              <pros:Location rdf:about="http://www.pros.com/Bathroom">
+                <pros:parent rdf:resource="http://www.pros.com/Home"/>
+                <pros:isAdjacentTo rdf:resource="http://www.pros.com/Corridor"/>
+                <pros:mobilityTo rdf:resource="http://www.pros.com/Corridor"/>
+                <pros:temperature rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+                >15.0</pros:temperature>
+                <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Bathroom</pros:name>
+              </pros:Location>
+            </pros:isAdjacentTo>
+            <pros:isAdjacentTo>
+              <pros:Location rdf:about="http://www.pros.com/Kitchen">
+                <pros:mobilityTo rdf:resource="http://www.pros.com/Corridor"/>
+                <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Kitchen</pros:name>
+                <pros:parent rdf:resource="http://www.pros.com/Home"/>
+                <pros:isAdjacentTo rdf:resource="http://www.pros.com/Corridor"/>
+                <pros:services>
+                  <pros:Service rdf:about="http://www.pros.com/KitchenPresence">
+                    <pros:state rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >enable</pros:state>
+                    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >KitchenPresence</pros:name>
+                    <pros:locatedIn rdf:resource="http://www.pros.com/Kitchen"/>
+                  </pros:Service>
+                </pros:services>
+                <pros:environmentProperties>
+                  <pros:EnvironmentProperty rdf:about="http://www.pros.com/Kitchen_Intensity">
+                    <pros:type rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Double</pros:type>
+                    <pros:environmentPropertiesLocatedIn rdf:resource="http://www.pros.com/Kitchen"/>
+                    <pros:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >low</pros:value>
+                    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Intensity</pros:name>
+                  </pros:EnvironmentProperty>
+                </pros:environmentProperties>
+                <pros:environmentProperties>
+                  <pros:EnvironmentProperty rdf:about="http://www.pros.com/Kitchen_Presence">
+                    <pros:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >false</pros:value>
+                    <pros:environmentPropertiesLocatedIn rdf:resource="http://www.pros.com/Kitchen"/>
+                    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Presence</pros:name>
+                    <pros:type rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Boolean</pros:type>
+                  </pros:EnvironmentProperty>
+                </pros:environmentProperties>
+              </pros:Location>
+            </pros:isAdjacentTo>
+            <pros:mobilityTo rdf:resource="http://www.pros.com/Bathroom"/>
+            <pros:mobilityTo rdf:resource="http://www.pros.com/Kitchen"/>
+            <pros:mobilityTo>
+              <pros:Location rdf:about="http://www.pros.com/LivingRoom">
+                <pros:mobilityTo rdf:resource="http://www.pros.com/Corridor"/>
+                <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >LivingRoom</pros:name>
+                <pros:parent rdf:resource="http://www.pros.com/Home"/>
+                <pros:services>
+                  <pros:Service rdf:about="http://www.pros.com/LivingRoomLighting">
+                    <pros:operations>
+                      <pros:Operation rdf:about="http://www.pros.com/switchOff">
+                        <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Off</pros:name>
+                      </pros:Operation>
+                    </pros:operations>
+                    <pros:operations>
+                      <pros:Operation rdf:about="http://www.pros.com/switchOn">
+                        <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >On</pros:name>
+                      </pros:Operation>
+                    </pros:operations>
+                    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >LivingRoomLighting</pros:name>
+                    <pros:serviceCategory>
+                      <pros:ServiceCategory rdf:about="http://www.pros.com/Lighting">
+                        <pros:categoryServices rdf:resource="http://www.pros.com/LivingRoomLighting"/>
+                        <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Lighting</pros:name>
+                      </pros:ServiceCategory>
+                    </pros:serviceCategory>
+                    <pros:locatedIn rdf:resource="http://www.pros.com/LivingRoom"/>
+                    <pros:state rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >off</pros:state>
+                  </pros:Service>
+                </pros:services>
+                <pros:persons>
+                  <pros:Person rdf:about="http://www.pros.com/Guillem">
+                    <pros:isRelatedWith>
+                      <pros:Person rdf:about="http://www.pros.com/Fani">
+                        <pros:maritalStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >single</pros:maritalStatus>
+                        <pros:login rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >esseras</pros:login>
+                        <pros:password rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >123456</pros:password>
+                        <pros:confortTemp rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+                        >26.0</pros:confortTemp>
+                        <pros:surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Serral</pros:surname>
+                        <pros:skills>
+                          <pros:Skill rdf:about="http://www.pros.com/computerKnowledgeSkill">
+                            <pros:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >high</pros:value>
+                            <pros:type rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >String</pros:type>
+                            <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >Computer knowledge</pros:name>
+                          </pros:Skill>
+                        </pros:skills>
+                        <pros:userLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >kitchen</pros:userLocation>
+                        <pros:isRelatedWith rdf:resource="http://www.pros.com/Guillem"/>
+                        <pros:preferences>
+                          <pros:Preference rdf:about="http://www.pros.com/WakingUpTime">
+                            <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >WakingUpTime</pros:name>
+                            <pros:type rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >time</pros:type>
+                            <pros:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >8:00</pros:value>
+                          </pros:Preference>
+                        </pros:preferences>
+                        <pros:personLocatedIn rdf:resource="http://www.pros.com/LivingRoom"/>
+                        <pros:contactData>
+                          <pros:ContactData rdf:about="http://www.pros.com/contactDataFani">
+                            <pros:adress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >General Aviles</pros:adress>
+                            <pros:email rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >eserral@dsic.upv.es</pros:email>
+                          </pros:ContactData>
+                        </pros:contactData>
+                        <pros:urgentTasks rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                        >true</pros:urgentTasks>
+                        <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Fani</pros:name>
+                      </pros:Person>
+                    </pros:isRelatedWith>
+                    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Guillem</pros:name>
+                    <pros:surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Gasco</pros:surname>
+                    <pros:maritalStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >single</pros:maritalStatus>
+                    <pros:password rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >pass</pros:password>
+                    <pros:login rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >ggasco</pros:login>
+                    <pros:personLocatedIn rdf:resource="http://www.pros.com/LivingRoom"/>
+                  </pros:Person>
+                </pros:persons>
+                <pros:persons rdf:resource="http://www.pros.com/Fani"/>
+              </pros:Location>
+            </pros:mobilityTo>
+          </pros:Location>
+        </pros:childrenLocations>
+        <pros:mobilityTo>
+          <pros:Location rdf:about="http://www.pros.com/Outdoor">
+            <pros:mobilityTo rdf:resource="http://www.pros.com/Home"/>
+            <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Outdoor</pros:name>
+            <pros:isAdjacentTo rdf:resource="http://www.pros.com/Home"/>
+            <pros:brightness rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >500.0</pros:brightness>
+            <pros:temperature rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >10.0</pros:temperature>
+            <pros:services>
+              <pros:Service rdf:about="http://www.pros.com/OutsidePresence">
+                <pros:locatedIn rdf:resource="http://www.pros.com/Outdoor"/>
+                <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >OutsidePresence</pros:name>
+                <pros:state rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >enable</pros:state>
+              </pros:Service>
+            </pros:services>
+          </pros:Location>
+        </pros:mobilityTo>
+        <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Home</pros:name>
+        <pros:services rdf:resource="http://www.pros.com/Recording"/>
+        <pros:services>
+          <pros:Service rdf:about="http://www.pros.com/NotifyCalendarAlarm">
+            <pros:operations>
+              <pros:Operation rdf:about="http://www.pros.com/notifyAlarm">
+                <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >notifyAlarm</pros:name>
+              </pros:Operation>
+            </pros:operations>
+            <pros:operations>
+              <pros:Operation rdf:about="http://www.pros.com/setAlarmTime">
+                <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >setAlarmState</pros:name>
+                <pros:hasArguments>
+                  <pros:Argument rdf:about="http://www.pros.com/timeArgument">
+                    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >time</pros:name>
+                  </pros:Argument>
+                </pros:hasArguments>
+              </pros:Operation>
+            </pros:operations>
+            <pros:serviceCategory rdf:resource="http://www.pros.com/Home"/>
+            <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >NotifyCalendarAlarm</pros:name>
+            <pros:state rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >enable</pros:state>
+            <pros:locatedIn rdf:resource="http://www.pros.com/Home"/>
+          </pros:Service>
+        </pros:services>
+        <pros:environmentProperties>
+          <pros:EnvironmentProperty rdf:about="http://www.pros.com/Home_Presence">
+            <pros:type rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Boolean</pros:type>
+            <pros:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >false</pros:value>
+            <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Home_Presence</pros:name>
+            <pros:environmentPropertiesLocatedIn rdf:resource="http://www.pros.com/Home"/>
+          </pros:EnvironmentProperty>
+        </pros:environmentProperties>
+        <pros:childrenLocations rdf:resource="http://www.pros.com/Kitchen"/>
+        <pros:services>
+          <pros:Service rdf:about="http://www.pros.com/MessageManagement">
+            <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >MessageManagement</pros:name>
+            <pros:state rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >enable</pros:state>
+            <pros:locatedIn rdf:resource="http://www.pros.com/Home"/>
+            <pros:serviceCategory>
+              <pros:ServiceCategory rdf:about="http://www.pros.com/Multimedia">
+                <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Multimedia</pros:name>
+                <pros:categoryServices rdf:resource="http://www.pros.com/MessageManagement"/>
+                <pros:categoryServices rdf:resource="http://www.pros.com/Recording"/>
+              </pros:ServiceCategory>
+            </pros:serviceCategory>
+          </pros:Service>
+        </pros:services>
+        <pros:childrenLocations rdf:resource="http://www.pros.com/LivingRoom"/>
+        <pros:temperature rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >15.0</pros:temperature>
+        <pros:environmentProperties>
+          <pros:EnvironmentProperty rdf:about="http://www.pros.com/NoiseLevel">
+            <pros:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >low</pros:value>
+            <pros:type rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >String</pros:type>
+            <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >NoiseLevel</pros:name>
+            <pros:environmentPropertiesLocatedIn rdf:resource="http://www.pros.com/Home"/>
+          </pros:EnvironmentProperty>
+        </pros:environmentProperties>
+        <pros:services>
+          <pros:Service rdf:about="http://www.pros.com/DoorManagement">
+            <pros:state rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >closed</pros:state>
+            <pros:operations>
+              <pros:Operation rdf:about="http://www.pros.com/closeDoor">
+                <pros:hasArguments>
+                  <pros:Argument rdf:about="http://www.pros.com/location">
+                    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >location</pros:name>
+                  </pros:Argument>
+                </pros:hasArguments>
+                <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >closeDoor</pros:name>
+              </pros:Operation>
+            </pros:operations>
+            <pros:operations>
+              <pros:Operation rdf:about="http://www.pros.com/openDoor">
+                <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >openDoor</pros:name>
+                <pros:hasArguments rdf:resource="http://www.pros.com/location"/>
+              </pros:Operation>
+            </pros:operations>
+            <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >DoorManagement</pros:name>
+            <pros:locatedIn rdf:resource="http://www.pros.com/Home"/>
+          </pros:Service>
+        </pros:services>
+        <pros:childrenLocations rdf:resource="http://www.pros.com/Bathroom"/>
+        <pros:isAdjacentTo rdf:resource="http://www.pros.com/Outdoor"/>
+        <pros:childrenLocations>
+          <pros:Location rdf:about="http://www.pros.com/Bedroom">
+            <pros:services>
+              <pros:Service rdf:about="http://www.pros.com/Radio">
+                <pros:locatedIn rdf:resource="http://www.pros.com/Bedroom"/>
+                <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Radio</pros:name>
+                <pros:operations>
+                  <pros:Operation rdf:about="http://www.pros.com/turnOff">
+                    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >turnOff</pros:name>
+                  </pros:Operation>
+                </pros:operations>
+                <pros:operations>
+                  <pros:Operation rdf:about="http://www.pros.com/turnOn">
+                    <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >turnOn</pros:name>
+                  </pros:Operation>
+                </pros:operations>
+                <pros:state rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >off</pros:state>
+              </pros:Service>
+            </pros:services>
+            <pros:services>
+              <pros:Service rdf:about="http://www.pros.com/AlarmClock">
+                <pros:locatedIn rdf:resource="http://www.pros.com/Bedroom"/>
+                <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >AlarmClock</pros:name>
+                <pros:state rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >off</pros:state>
+              </pros:Service>
+            </pros:services>
+            <pros:parent rdf:resource="http://www.pros.com/Home"/>
+            <pros:brightness rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >200.0</pros:brightness>
+            <pros:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Bedroom</pros:name>
+          </pros:Location>
+        </pros:childrenLocations>
+      </pros:Location>
+    </pros:locatedIn>
+    <pros:serviceCategory rdf:resource="http://www.pros.com/Multimedia"/>
+  </pros:Service>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.5, Build 663)  http://protege.stanford.edu -->

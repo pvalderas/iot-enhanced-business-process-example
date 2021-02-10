@@ -1,0 +1,710 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.pros.upv.es/SellDepartment#"
+     xml:base="http://www.pros.upv.es/SellDepartment"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.pros.upv.es/SellDepartment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#time -->
+
+    <rdfs:Datatype rdf:about="&xsd;time"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#ProductSoldIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.pros.upv.es/SellDepartment#ProductSoldIn">
+        <rdfs:domain rdf:resource="http://www.pros.upv.es/SellDepartment#ProductType"/>
+        <rdfs:range rdf:resource="http://www.pros.upv.es/SellDepartment#Shop"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#boughtProducts -->
+
+    <owl:ObjectProperty rdf:about="http://www.pros.upv.es/SellDepartment#boughtProducts">
+        <rdfs:domain rdf:resource="http://www.pros.upv.es/SellDepartment#Customer"/>
+        <rdfs:range rdf:resource="http://www.pros.upv.es/SellDepartment#Product"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#brand -->
+
+    <owl:ObjectProperty rdf:about="http://www.pros.upv.es/SellDepartment#brand">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.pros.upv.es/SellDepartment#Brand"/>
+        <rdfs:domain rdf:resource="http://www.pros.upv.es/SellDepartment#ProductType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#brandSoldIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.pros.upv.es/SellDepartment#brandSoldIn">
+        <rdfs:domain rdf:resource="http://www.pros.upv.es/SellDepartment#Brand"/>
+        <rdfs:range rdf:resource="http://www.pros.upv.es/SellDepartment#Shop"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#employees -->
+
+    <owl:ObjectProperty rdf:about="http://www.pros.upv.es/SellDepartment#employees">
+        <rdfs:range rdf:resource="http://www.pros.upv.es/SellDepartment#Employee"/>
+        <rdfs:domain rdf:resource="http://www.pros.upv.es/SellDepartment#Shop"/>
+        <owl:inverseOf rdf:resource="http://www.pros.upv.es/SellDepartment#workIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#isLocatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.pros.upv.es/SellDepartment#isLocatedIn">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.pros.upv.es/SellDepartment#Location"/>
+        <rdfs:range rdf:resource="http://www.pros.upv.es/SellDepartment#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#productType -->
+
+    <owl:ObjectProperty rdf:about="http://www.pros.upv.es/SellDepartment#productType">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.pros.upv.es/SellDepartment#Product"/>
+        <rdfs:range rdf:resource="http://www.pros.upv.es/SellDepartment#ProductType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#productsInStock -->
+
+    <owl:ObjectProperty rdf:about="http://www.pros.upv.es/SellDepartment#productsInStock">
+        <rdfs:range rdf:resource="http://www.pros.upv.es/SellDepartment#Product"/>
+        <rdfs:domain rdf:resource="http://www.pros.upv.es/SellDepartment#Shop"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#sellsProductTypes -->
+
+    <owl:ObjectProperty rdf:about="http://www.pros.upv.es/SellDepartment#sellsProductTypes">
+        <owl:inverseOf rdf:resource="http://www.pros.upv.es/SellDepartment#ProductSoldIn"/>
+        <rdfs:range rdf:resource="http://www.pros.upv.es/SellDepartment#ProductType"/>
+        <rdfs:domain rdf:resource="http://www.pros.upv.es/SellDepartment#Shop"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#workIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.pros.upv.es/SellDepartment#workIn">
+        <rdfs:domain rdf:resource="http://www.pros.upv.es/SellDepartment#Employee"/>
+        <rdfs:range rdf:resource="http://www.pros.upv.es/SellDepartment#Shop"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#barCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.pros.upv.es/SellDepartment#barCode">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#Product"/>
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#ProductType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#bestTimeToSell -->
+
+    <owl:DatatypeProperty rdf:about="http://www.pros.upv.es/SellDepartment#bestTimeToSell">
+        <rdfs:domain rdf:resource="http://www.pros.upv.es/SellDepartment#ProductType"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#bestWeatherToSell -->
+
+    <owl:DatatypeProperty rdf:about="http://www.pros.upv.es/SellDepartment#bestWeatherToSell">
+        <rdfs:domain rdf:resource="http://www.pros.upv.es/SellDepartment#ProductType"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#closingTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.pros.upv.es/SellDepartment#closingTime">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.pros.upv.es/SellDepartment#Shop"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#currentlyWorking -->
+
+    <owl:DatatypeProperty rdf:about="http://www.pros.upv.es/SellDepartment#currentlyWorking">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.pros.upv.es/SellDepartment#Employee"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#discount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.pros.upv.es/SellDepartment#discount">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#Customer"/>
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#ProductType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#experience -->
+
+    <owl:DatatypeProperty rdf:about="http://www.pros.upv.es/SellDepartment#experience">
+        <rdfs:domain rdf:resource="http://www.pros.upv.es/SellDepartment#Employee"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.pros.upv.es/SellDepartment#id">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#Customer"/>
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#Employee"/>
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#Product"/>
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#ProductType"/>
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#Shop"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#inPromotion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.pros.upv.es/SellDepartment#inPromotion">
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#Product"/>
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#ProductType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#location -->
+
+    <owl:DatatypeProperty rdf:about="http://www.pros.upv.es/SellDepartment#location">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#Customer"/>
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#Employee"/>
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#Product"/>
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#ProductType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#maxTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.pros.upv.es/SellDepartment#maxTime">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment rdf:datatype="&xsd;string">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Max time that a seller should spend to sell the product
+    &lt;/p&gt;</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#Product"/>
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#ProductType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.pros.upv.es/SellDepartment#name">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#Customer"/>
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#Employee"/>
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#Product"/>
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#ProductType"/>
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#Shop"/>
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#TemporalProperty"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#openingTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.pros.upv.es/SellDepartment#openingTime">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.pros.upv.es/SellDepartment#Shop"/>
+        <rdfs:range rdf:resource="&xsd;time"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#price -->
+
+    <owl:DatatypeProperty rdf:about="http://www.pros.upv.es/SellDepartment#price">
+        <rdfs:range rdf:resource="&xsd;float"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#Product"/>
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#ProductType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#state -->
+
+    <owl:DatatypeProperty rdf:about="http://www.pros.upv.es/SellDepartment#state">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#Customer"/>
+                    <rdf:Description rdf:about="http://www.pros.upv.es/SellDepartment#Weather"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#stock -->
+
+    <owl:DatatypeProperty rdf:about="http://www.pros.upv.es/SellDepartment#stock">
+        <rdfs:domain rdf:resource="http://www.pros.upv.es/SellDepartment#ProductType"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#temporalValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.pros.upv.es/SellDepartment#temporalValue">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.pros.upv.es/SellDepartment#TemporalProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#Brand -->
+
+    <owl:Class rdf:about="http://www.pros.upv.es/SellDepartment#Brand"/>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#Customer -->
+
+    <owl:Class rdf:about="http://www.pros.upv.es/SellDepartment#Customer"/>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#Employee -->
+
+    <owl:Class rdf:about="http://www.pros.upv.es/SellDepartment#Employee"/>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#Location -->
+
+    <owl:Class rdf:about="http://www.pros.upv.es/SellDepartment#Location"/>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#Product -->
+
+    <owl:Class rdf:about="http://www.pros.upv.es/SellDepartment#Product"/>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#ProductCategory -->
+
+    <owl:Class rdf:about="http://www.pros.upv.es/SellDepartment#ProductCategory"/>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#ProductType -->
+
+    <owl:Class rdf:about="http://www.pros.upv.es/SellDepartment#ProductType"/>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#Seller -->
+
+    <owl:Class rdf:about="http://www.pros.upv.es/SellDepartment#Seller">
+        <rdfs:subClassOf rdf:resource="http://www.pros.upv.es/SellDepartment#Employee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#Shop -->
+
+    <owl:Class rdf:about="http://www.pros.upv.es/SellDepartment#Shop"/>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#TemporalProperty -->
+
+    <owl:Class rdf:about="http://www.pros.upv.es/SellDepartment#TemporalProperty"/>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#Weather -->
+
+    <owl:Class rdf:about="http://www.pros.upv.es/SellDepartment#Weather"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#CurrentTime -->
+
+    <owl:NamedIndividual rdf:about="http://www.pros.upv.es/SellDepartment#CurrentTime">
+        <rdf:type rdf:resource="http://www.pros.upv.es/SellDepartment#TemporalProperty"/>
+        <temporalValue rdf:datatype="&xsd;int">1800</temporalValue>
+        <name rdf:datatype="&xsd;string">currentTime</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#CurrentWeather -->
+
+    <owl:NamedIndividual rdf:about="http://www.pros.upv.es/SellDepartment#CurrentWeather">
+        <rdf:type rdf:resource="http://www.pros.upv.es/SellDepartment#Weather"/>
+        <state rdf:datatype="&xsd;string">Hot</state>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#Cust-5632 -->
+
+    <owl:NamedIndividual rdf:about="http://www.pros.upv.es/SellDepartment#Cust-5632">
+        <rdf:type rdf:resource="http://www.pros.upv.es/SellDepartment#Customer"/>
+        <id rdf:datatype="&xsd;string">Cust-5632</id>
+        <location rdf:datatype="&xsd;string">FanDepartment</location>
+        <discount rdf:datatype="&xsd;string">loyal</discount>
+        <state rdf:datatype="&xsd;string">relaxed</state>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#Cust_21 -->
+
+    <owl:NamedIndividual rdf:about="http://www.pros.upv.es/SellDepartment#Cust_21">
+        <rdf:type rdf:resource="http://www.pros.upv.es/SellDepartment#Customer"/>
+        <id rdf:datatype="&xsd;string">Cust_21</id>
+        <location rdf:datatype="&xsd;string">PhoneDepartment</location>
+        <state rdf:datatype="&xsd;string">relaxed</state>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#Cust_68 -->
+
+    <owl:NamedIndividual rdf:about="http://www.pros.upv.es/SellDepartment#Cust_68">
+        <rdf:type rdf:resource="http://www.pros.upv.es/SellDepartment#Customer"/>
+        <id rdf:datatype="&xsd;string">Cust_68</id>
+        <location rdf:datatype="&xsd;string">FanDepartment</location>
+        <state rdf:datatype="&xsd;string">inARush</state>
+        <discount rdf:datatype="&xsd;string">loyal</discount>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#Customer_104 -->
+
+    <owl:NamedIndividual rdf:about="http://www.pros.upv.es/SellDepartment#Customer_104">
+        <rdf:type rdf:resource="http://www.pros.upv.es/SellDepartment#Customer"/>
+        <id rdf:datatype="&xsd;string">Customer_104</id>
+        <location rdf:datatype="&xsd;string">PhoneDepartment</location>
+        <state rdf:datatype="&xsd;string">inARush</state>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#FNAC -->
+
+    <owl:NamedIndividual rdf:about="http://www.pros.upv.es/SellDepartment#FNAC">
+        <name rdf:datatype="&xsd;string">FNAC</name>
+        <id rdf:datatype="&xsd;string">FNAC-Leuven</id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#FNAC-Leuven -->
+
+    <owl:NamedIndividual rdf:about="http://www.pros.upv.es/SellDepartment#FNAC-Leuven">
+        <rdf:type rdf:resource="http://www.pros.upv.es/SellDepartment#Shop"/>
+        <name rdf:datatype="&xsd;string"></name>
+        <id rdf:datatype="&xsd;string"></id>
+        <closingTime rdf:datatype="&xsd;int">1830</closingTime>
+        <employees rdf:resource="http://www.pros.upv.es/SellDepartment#Seller_12"/>
+        <employees rdf:resource="http://www.pros.upv.es/SellDepartment#Seller_15"/>
+        <employees rdf:resource="http://www.pros.upv.es/SellDepartment#Seller_16"/>
+        <employees rdf:resource="http://www.pros.upv.es/SellDepartment#Seller_17"/>
+        <employees rdf:resource="http://www.pros.upv.es/SellDepartment#Seller_8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#Fan_23 -->
+
+    <owl:NamedIndividual rdf:about="http://www.pros.upv.es/SellDepartment#Fan_23">
+        <rdf:type rdf:resource="http://www.pros.upv.es/SellDepartment#ProductType"/>
+        <bestTimeToSell rdf:datatype="&xsd;string"></bestTimeToSell>
+        <location rdf:datatype="&xsd;string"></location>
+        <id rdf:datatype="&xsd;string"></id>
+        <price rdf:datatype="&xsd;float">18.0</price>
+        <stock rdf:datatype="&xsd;int">5</stock>
+        <bestWeatherToSell rdf:datatype="&xsd;string">hot</bestWeatherToSell>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#Fan_23-26 -->
+
+    <owl:NamedIndividual rdf:about="http://www.pros.upv.es/SellDepartment#Fan_23-26">
+        <rdf:type rdf:resource="http://www.pros.upv.es/SellDepartment#Product"/>
+        <price rdf:datatype="&xsd;float">18.0</price>
+        <maxTime rdf:datatype="&xsd;int">2</maxTime>
+        <id rdf:datatype="&xsd;string">Fan_23_26</id>
+        <location rdf:datatype="&xsd;string">fanDeparment</location>
+        <inPromotion rdf:datatype="&xsd;boolean">true</inPromotion>
+        <productType rdf:resource="http://www.pros.upv.es/SellDepartment#Fan_23"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#MotorolaG -->
+
+    <owl:NamedIndividual rdf:about="http://www.pros.upv.es/SellDepartment#MotorolaG">
+        <rdf:type rdf:resource="http://www.pros.upv.es/SellDepartment#ProductType"/>
+        <location rdf:datatype="&xsd;string"></location>
+        <name rdf:datatype="&xsd;string"></name>
+        <stock rdf:datatype="&xsd;int">10</stock>
+        <price rdf:datatype="&xsd;float">230.0</price>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#MotorolaG_15 -->
+
+    <owl:NamedIndividual rdf:about="http://www.pros.upv.es/SellDepartment#MotorolaG_15">
+        <rdf:type rdf:resource="http://www.pros.upv.es/SellDepartment#Product"/>
+        <maxTime rdf:datatype="&xsd;int">20</maxTime>
+        <price rdf:datatype="&xsd;float">230.0</price>
+        <id rdf:datatype="&xsd;string">MotorolaG_15</id>
+        <location rdf:datatype="&xsd;string">PhoneDepartment</location>
+        <inPromotion rdf:datatype="&xsd;boolean">true</inPromotion>
+        <productType rdf:resource="http://www.pros.upv.es/SellDepartment#MotorolaG"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#Seller_12 -->
+
+    <owl:NamedIndividual rdf:about="http://www.pros.upv.es/SellDepartment#Seller_12">
+        <rdf:type rdf:resource="http://www.pros.upv.es/SellDepartment#Seller"/>
+        <location rdf:datatype="&xsd;string"></location>
+        <name rdf:datatype="&xsd;string">John Valerio</name>
+        <id rdf:datatype="&xsd;string">Seller_12</id>
+        <currentlyWorking rdf:datatype="&xsd;boolean">false</currentlyWorking>
+        <experience rdf:datatype="&xsd;string">high</experience>
+        <workIn rdf:resource="http://www.pros.upv.es/SellDepartment#FNAC-Leuven"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#Seller_15 -->
+
+    <owl:NamedIndividual rdf:about="http://www.pros.upv.es/SellDepartment#Seller_15">
+        <rdf:type rdf:resource="http://www.pros.upv.es/SellDepartment#Seller"/>
+        <id rdf:datatype="&xsd;string">Seller_15</id>
+        <currentlyWorking rdf:datatype="&xsd;boolean">true</currentlyWorking>
+        <workIn rdf:resource="http://www.pros.upv.es/SellDepartment#FNAC-Leuven"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#Seller_16 -->
+
+    <owl:NamedIndividual rdf:about="http://www.pros.upv.es/SellDepartment#Seller_16">
+        <rdf:type rdf:resource="http://www.pros.upv.es/SellDepartment#Seller"/>
+        <id rdf:datatype="&xsd;string">Seller_16</id>
+        <currentlyWorking rdf:datatype="&xsd;boolean">false</currentlyWorking>
+        <workIn rdf:resource="http://www.pros.upv.es/SellDepartment#FNAC-Leuven"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#Seller_17 -->
+
+    <owl:NamedIndividual rdf:about="http://www.pros.upv.es/SellDepartment#Seller_17">
+        <rdf:type rdf:resource="http://www.pros.upv.es/SellDepartment#Seller"/>
+        <id rdf:datatype="&xsd;string">Seller_17</id>
+        <currentlyWorking rdf:datatype="&xsd;boolean">false</currentlyWorking>
+        <workIn rdf:resource="http://www.pros.upv.es/SellDepartment#FNAC-Leuven"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#Seller_8 -->
+
+    <owl:NamedIndividual rdf:about="http://www.pros.upv.es/SellDepartment#Seller_8">
+        <rdf:type rdf:resource="http://www.pros.upv.es/SellDepartment#Seller"/>
+        <id rdf:datatype="&xsd;string">Seller_8</id>
+        <currentlyWorking rdf:datatype="&xsd;boolean">true</currentlyWorking>
+        <workIn rdf:resource="http://www.pros.upv.es/SellDepartment#FNAC-Leuven"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#Shop_28 -->
+
+    <owl:NamedIndividual rdf:about="http://www.pros.upv.es/SellDepartment#Shop_28">
+        <rdf:type rdf:resource="http://www.pros.upv.es/SellDepartment#Shop"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.pros.upv.es/SellDepartment#Smartphone -->
+
+    <owl:NamedIndividual rdf:about="http://www.pros.upv.es/SellDepartment#Smartphone">
+        <rdf:type rdf:resource="http://www.pros.upv.es/SellDepartment#ProductCategory"/>
+        <id rdf:datatype="&xsd;string"></id>
+        <name rdf:datatype="&xsd;string"></name>
+        <maxTime rdf:datatype="&xsd;time">00:15:00</maxTime>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
