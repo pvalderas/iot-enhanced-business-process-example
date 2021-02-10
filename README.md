@@ -1,23 +1,32 @@
-# Microservice composition based on the Choreography of BPMN fragments. Example
+# IoT Enhanced Business Processes supported by BPMN and Microservices. Example
 
-This example shows how to create a choreographed composition of microservices by using BPMN diagrams. 
-To do so, the supporting infrastructure available in the following Github repository is used: [microservices-composition-infrastructure](https://github.com/pvalderas/microservices-composition-infrastructure).
+This example shows how to define an IoT Enhanced Business Processes by using BPMN diagrams and how to deploy into a microserive infrastructure. 
+To do so, the supporting infrastructure available in the following Github repository is used: [iot-enhanced-business-process-infrastructure](https://github.com/pvalderas/iot-enhanced-business-process-infrastructure).
 
 # About
 
 This is the result of a reserach work leaded by Pedro Valderas at the PROS Research Center, Universitat Politècnica de València, Spain.
 
-This work presents a microservice composition approach based on the choreography of BPMN fragments. On the one hand, developers can describe the big picture of the composition with a BPMN model, providing a valuable mechanism to analyse it when engineering decisions need to be taken. On the other hand, this model is split into fragments in order to be executed though an event-based choreography form, providing the high degree of decoupling among microservices demanded in this type of architecture. 
+This work presents a modelling approach based on BPMN that reuses the concepts introduced by this language in order to model IoT-enhanced BPs. This modelling approach allows specifying IoT devices and both push and pull interactions between the process and Iot Devices, without modifying the BPMN metamodel.
 
-This composition approach is supported by a microservice infrastucture developed to achieve that both descriptions of a composition (big picture and split one) coexist. In this sense, microservices compositions can be evolved graphically from both either the BPMN descrition of the big picture or a BPMN fragment.
+This modelling approach is suppoted by a microservice architecture aimed at facilitating the integration of business processes with the physical world that provides high flexibility to support multiples IoT device technologies, and facilitates evolution and maintenance.
 
 # Example overview
 
-This example is composed by 8 microservices:
+This example is composed by 9 microservices:
 
-* 4 business microservices: Customers, Inventory, Payment and Shipment. These microservices are endowed with the functionality provided by the Composition Controller module, which supports the choreographed execution of BPMN fragments.
-* 2 typical infrastucture microservices: an Eureka service registry, and a Zuul gateway
-* 2 additional microservices for supporing the composition of business microservices: the Fragment Manager and the Global Composition Manager
+* 2 microservices that manage IoT devices synchronously: TruckContainerSensor and Robot. These microservices are endowed with the functionality provided by the Synchronous Microservice module (see the infrastruture repository introduce above), which provide the funcionality to allow the BP Controller to manage IoT devices throw a REST API.
+* 2 microservices that manage IoT devices asynchronously: RefrigeratorControlSystem and Alarm. These microservices are endowed with the functionality provided by the Asynchronous Microservice module(see the infrastruture repository introduce above), which provide the funcionality to allow the BP Controller to manage IoT devices throw a publish/subscribe communication.
+* 1 microserive that support the information system of the organization.
+* 1 infrastucture microservices: an Eureka service registry
+* 3 microservices for supporing the execution of IoT Enhanced Business Processes: the BP Controller, the Action Peformer and the Context Manager. See the infrastruture repository introduce above for additional informaión about these microservices.
+
+The BPMN business process supported by these microservices is the following:
+
+The process starts when a container with a pallet of a same product arrives to the smart distribution centre.
+The first thing to do at the distribution centre is to check the quality of the products of the pallet (level of firmness, colour, and possible damages). This is done by a worker who is in charge of registering the results in the system. Next, the conditions in which the products have been transported, i.e., the container’s temperature and humidity are automatically sensed. Based on this first evaluation, the products are considered in good quality or not for distribution. If not, the rejection of the pallet is registered and it is discarded by moving it to a garbage. On the contrary, if the quality of the products is good for consumption, the pallet is registered in the distribution centre and placed into a transportation line to be stored in a refrigerated camera climatized accordingly to avoid product spoilage (e.g., oranges must be kept between 2 and 12 Celsius degrees and at 90% relative humidity). 
+Besides this first product control, a second one is performed over a sample in the laboratory. This analysis will determine whether molds, yeast, and certain bacteria has grown in the received products. If so, an alarm is activated, and the pallet is discarded by transporting it to the garbage. If no bacteria are detected, the shipment task of the received products can start. If the quality of the products is not excellent (e.g., they are good for distribution but firmness or colour are not the optimum), the price of the products is reduced and the pallet is prioritized to avoid their spoilage. Finally, all shipped pallets are registered in the system once a truck for transporting them is available.
+
 
 # Building and executing the example
 
@@ -26,27 +35,22 @@ Clone this Github repository and build each microservice with Gradle. To execute
 Execute the microservices in the following order:
 <ol>
 <li>Eureka Server</li>
-<li>Zuul Gateway</li>
-<li>Global Composition Manager</li>
-<li>Fragment Manager</li>
-<li>Business microservices</li>
+<li>IoT microservices and Information System microservice</li>
+<li>BPController, Action Performer and Context Monitor</li>
 </ol>
 
-# Creating a microservice composition
+# Creating an IoT Enhanced Business Process
 
-The Global Composition Manager publishes at http://localhost:8084 a BPMN editor to create microservice composition. An animated snapshot of the BPMN editor is show next.
+The BP Controller of this example publishes at http://localhost:8081 a BPMN editor to create IoT Enhanced Business Processes. An animated snapshot of the BPMN editor is show next.
 
 ![demo application screenshot1](./snapshots/BPMNMicroserviceComposer_snapshot1.gif "Screenshot 1 of the BPMN Microservice Composer")
 
-This editor allows you to associate a microserive to a BPMN pool and the operations of this microservice to the service tasks of this pool. The operations are obtained from Eureka, which is accessed through Zuul in order to avoid Cross Domain Origin problems.
+This editor allows you to associate a microserive to a BPMN lane and the operations of this microservice to the service tasks of this pool. The operations are obtained from Eureka.
 
-To test the example you can create a microservice composition from scratch or use the example uploaded at the root of this reposittory. 
+To test the example you can create a IoT Enhanced Business Processes from scratch or use the example uploaded at the root of this reposittory. 
 
-Once the microservice composition is created you just need to click the SEND button and give and ID to the compsition. Then, the composition is sent to the Fragment Manager which splits it into fragments and distributes them among the business microservices.
 
-![demo application screenshot2](./snapshots/BPMNMicroserviceComposer_snapshot2.png "Screenshot 2 of the BPMN Microservice Composer")
-
-# Executing a microservice composition
+# Executing an IoT Enhanced Business Process
 
 The communication among microservices is done in an event-based way through a RabbitMQ server. Thus, this example assumes you have [RabbitMQ](https://www.rabbitmq.com/) installed.
 
@@ -69,14 +73,3 @@ For instance, in order to start the composition of the provided example, if you 
 }
 
 To facilitate the publication of messages, the RabbitCompositionEventSender Java application is provided. 
-
-# Evolving a microservice composition
-
-In order to evolve a microservice composition you have two options:
-
-* Modify the big picture of the composition by using the BPMN editor provided by the Global Composition Manager. Then, changes are propagated to the Fragment of each microservice.
-* Modify the BPMN fragment of a particular microservice. To do so, the Composition Controller of each microservice publishes an adapted version of the BPMN editor, which allows you to select a Fragment managed by the microservice, modify it, and sincronize changes with the big picture. For instance, the BPMN editor of the Customer microservice is published at http://localhost:8081. An animated snapshot of it is shown below.
-
-![demo application screenshot3](./snapshots/BPMNMicroserviceComposer_snapshot3.gif "Screenshot 3 of the BPMN Microservice Composer")
-
-Note that the evolution of a microservice composition from a BPMN Fragment is limited to changes in service tasks performed by the corresponding microservice, the defined event-based communication must be mantained. This means that, for instance, catch and through events, and message flows cannot be modified. These type of modifications must be done from the big picture provided by the Global Composition Manager.
