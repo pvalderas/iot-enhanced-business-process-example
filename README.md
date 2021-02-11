@@ -59,7 +59,7 @@ Execute the microservices in the following order:
 
 The BP Controller of this example publishes at http://localhost:8081 a BPMN editor to create IoT Enhanced Business Processes. An animated snapshot of the BPMN editor is show next.
 
-![demo application screenshot](.snapshot.gif "Screenshot of the BPMN editor to create IoT Enhanced Business Processes")
+![demo application screenshot](./snapshot.gif "Screenshot of the BPMN editor to create IoT Enhanced Business Processes")
 
 This editor allows you to associate a microserive to a BPMN lane and the operations of this microservice to the service tasks of this lane. The microservices and their operations are obtained from Eureka.
 
