@@ -59,9 +59,9 @@ Execute the microservices in the following order:
 
 The BP Controller of this example publishes at http://localhost:8081 a BPMN editor to create IoT Enhanced Business Processes. An animated snapshot of the BPMN editor is show next.
 
-![demo application screenshot1](./snapshots/BPMNMicroserviceComposer_snapshot1.gif "Screenshot 1 of the BPMN Microservice Composer")
+![demo application screenshot](.snapshot.gif "Screenshot of the BPMN editor to create IoT Enhanced Business Processes")
 
-This editor allows you to associate a microserive to a BPMN lane and the operations of this microservice to the service tasks of this pool. The operations are obtained from Eureka.
+This editor allows you to associate a microserive to a BPMN lane and the operations of this microservice to the service tasks of this lane. The microservices and their operations are obtained from Eureka.
 
 To test the example you can create a IoT Enhanced Business Processes from scratch or use the example uploaded at the root of this reposittory. 
 
@@ -70,22 +70,4 @@ To test the example you can create a IoT Enhanced Business Processes from scratc
 
 The communication among microservices is done in an event-based way through a RabbitMQ server. Thus, this example assumes you have [RabbitMQ](https://www.rabbitmq.com/) installed.
 
-To execute the composition you just need to publish a message to a Topic exchange in RabbitMQ using the following routing key: 
 
-[miroservice].[compositionID]
-
-where [microservice] is the ID of the microservice that must start the composition and [compositionID] the id you have given to the composition.
-
-The message to publish is a JSON description with the message property. The value of this property must fit the following structure:
-
-[compositionID]_[BPMNMessageName]Message
-
-where [compositionID] is the id you have given to the composition and [BPMNMessageName] is the name of the BPMN message that triggers the composition.
-
-For instance, in order to start the composition of the provided example, if you give the id "ProceessOrder" to the composition, you must publish the following JSON specification:
-
-{
-  "message": "ProcessOrder_ProcessPurchaseOrderMessage"
-}
-
-To facilitate the publication of messages, the RabbitCompositionEventSender Java application is provided. 
