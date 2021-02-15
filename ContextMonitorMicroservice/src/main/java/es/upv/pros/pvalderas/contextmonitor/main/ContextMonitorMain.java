@@ -12,6 +12,5 @@ public class ContextMonitorMain {
 	public static void main(String[] args) {
 		SpringApplication.run(ContextMonitorMain.class, args);
 	}
-	
 		
 }
