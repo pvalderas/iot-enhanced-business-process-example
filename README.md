@@ -68,6 +68,22 @@ To test the example you can create a IoT Enhanced Business Processes from scratc
 
 # Executing an IoT Enhanced Business Process
 
-The communication among microservices is done in an event-based way through a RabbitMQ server. Thus, this example assumes you have [RabbitMQ](https://www.rabbitmq.com/) installed.
+The IoT Enhanced Business Process of the example is started when the Context Manager injects the high-level event Container Arrival. To do so, the proper low-level context data should be published in an event-based by supported by RabbitMQ server. Thus, this example assumes you have [RabbitMQ](https://www.rabbitmq.com/) installed.
 
+The low-level context data should be publishes in JSON format and is used by the Context Manager to infer that a container is within the WareHouse. For example, considering that a Bluetooth beacon is installed to detect a container, this low-level data could be as follows:
 
+```json
+{
+	"device":"BluetoohBeacon",
+	"id": "containerReception",
+	"properties":[
+			{
+				"name":"status",
+				"value" true
+			}
+	]
+	
+}
+```
+
+This context-data must be pubished in a RabbitMQ queue named "context". In order to test how this context data is processed, the Java application ContextDataTestingApp is provided. This application allow you to publish low-level context data as the example presented above in the RabbitMQ queue.
