@@ -14,5 +14,5 @@ eventBus:
   host: localhost
  
 contextOntology:
-  name: Warehouse-IoTBPM
+  name: ContextOntology
   path: models

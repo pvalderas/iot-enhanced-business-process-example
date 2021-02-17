@@ -11,9 +11,9 @@ public class PurchaseContextOntology extends ContextOntology {
 	public Map<String, String> SWRLRules() {
 		Map<String, String> rules=new Hashtable<String,String>();
 
-		rules.put("ContainerArrival","Container(?container) AND location (?container, ?x) AND is-within(?x, warehouseLocation) -> status(?container,'arrivalInWarehouse')");
-		rules.put("CameraRegrigeratorTooWarm","TemperatureObservation(?o) AND hasResult(?o, ?result) AND hasValue(?result, ?value) AND Product (?p) AND maximumTemperature (?p, ?t) AND Location (?l) AND location (?p, ?l) AND swrlb:greaterThan (?value, ?t) -> temperatureCondition (?p, 'TooWarm')");
-		rules.put("TruckArrival","Truck(?truck) AND location (?truck, ?x) AND is-within(?x, warehouseLocation) -> status(?truck,'arrivalInWarehouse')");
+		rules.put("ContainerArrival","Container(?container) ^ locatedIn(?container, ContainerReception) -> status(?container,\"arrivalInWarehouse\")");
+		rules.put("CameraRegrigeratorTooWarm","TemperatureObservation(?o) ^ hasResult(?o, ?result) ^ value(?result, ?v) ^ Product (?p) ^ maximumTemperature (?p, ?t) ^ swrlb:greaterThan (?v, ?t) -> temperatureCondition (?p, \"TooWarm\")");
+		rules.put("TruckArrival","Truck(?truck) ^ locatedIn (?truck, TruckReception) -> status(?truck,\"arrivalInWarehouse\")");
 
 		return rules;
 	}
