@@ -74,7 +74,7 @@ The low-level context data should be publishes in JSON format and is used by the
 
 ```json
 {
-	"device":"BluetoohBeacon",
+	"device":"BluetoothBeacon",
 	"id": "containerReception",
 	"properties":[
 			{
