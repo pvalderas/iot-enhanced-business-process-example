@@ -37,7 +37,7 @@ configurations.all {
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.springframework.cloud:spring-cloud-starter-eureka'
-    compile 'com.github.pvalderas.iot-enhanced-business-process-infrastructure:syncronousmicroservice:main-SNAPSHOT'
+    compile 'com.github.pvalderas.iot-enhanced-business-process-infrastructure:iotdevice:main-SNAPSHOT'
 }
 
 jar{

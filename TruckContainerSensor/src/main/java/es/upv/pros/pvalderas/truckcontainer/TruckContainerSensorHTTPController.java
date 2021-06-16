@@ -3,7 +3,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import es.upv.pros.pvalderas.microservice.syncronous.BPMNOperation;
+import es.upv.pros.pvalderas.microservice.iotdevice.BPMNOperation;
  
 @RestController
 public class TruckContainerSensorHTTPController {

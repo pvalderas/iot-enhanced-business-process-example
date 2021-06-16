@@ -4,11 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-import es.upv.pros.pvalderas.microservice.asynchronous.AsynchronousMicroservice;
+import es.upv.pros.pvalderas.microservice.iotdevice.IoTDevice;
 
 @EnableDiscoveryClient
-@SpringBootApplication(scanBasePackages = {"es.upv.pros.pvalderas.refrigerator","es.upv.pros.pvalderas.microservice.asynchronous"})
-@AsynchronousMicroservice(serviceAPIClass=RefrigeratorControlSystemAPI.class)
+@SpringBootApplication(scanBasePackages = {"es.upv.pros.pvalderas.refrigerator","es.upv.pros.pvalderas.microservice.iotdevice"})
+@IoTDevice(serviceAPIClass=RefrigeratorHTTPController.class)
 public class RefrigeratorControlSystem {
 	
 	public static void main(String[] args) {
