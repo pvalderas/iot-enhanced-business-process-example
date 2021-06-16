@@ -1,0 +1,37 @@
+﻿<Properties StartupConfiguration="{4F0E8337-E5F6-40E1-AC1F-B9F63D9C20E1}|Default">
+  <MonoDevelop.Ide.ItemProperties.RefrigeratorControlSystem PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="RefrigeratorControlSystem/Startup.cs">
+    <Files>
+      <File FileName="RefrigeratorControlSystem/Startup.cs" Line="93" Column="2" />
+      <File FileName="RefrigeratorControlSystem/Controllers/Operation.cs" />
+      <File FileName="RefrigeratorControlSystem/Controllers/RefrigeratorControlSystemController.cs" Line="40" Column="27" />
+      <File FileName="RefrigeratorControlSystem/Properties/launchSettings.json" />
+      <File FileName="RefrigeratorControlSystem/appsettings.json" />
+      <File FileName="RefrigeratorControlSystem/Program.cs" Line="1" Column="1" />
+      <File FileName="../InformationSystem/InformationSystem/Controllers/InformationSystemController.cs" Line="21" Column="27" />
+      <File FileName="../InformationSystem/InformationSystem/Startup.cs" Line="96" Column="6" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="RefrigeratorControlSystem" expanded="True">
+            <Node name="RefrigeratorControlSystem" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Startup.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

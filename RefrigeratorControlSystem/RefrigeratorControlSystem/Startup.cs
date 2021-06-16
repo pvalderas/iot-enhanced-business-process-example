@@ -6,21 +6,23 @@ using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace InformationSystem
+namespace RefrigeratorControlSystem
 {
     public class Startup
     {
-        private string ID = "InformationSystem";
+        private string ID = "RefrigeratorControlSystem";
 
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            this.RegisterToEureka();
         }
 
         public IConfiguration Configuration { get; }
@@ -29,8 +31,6 @@ namespace InformationSystem
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            this.RegisterToEureka();
-           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,8 +39,9 @@ namespace InformationSystem
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                this.registerToEureka();
             }
+
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 

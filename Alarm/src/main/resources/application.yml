@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: Alarm
+    
+server:
+  port: 8093
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:2222/eureka
+  instance:
+    metadataMap:
+      connectionType: asynchronous
+
+eventBus:
+  type: rabbitmq
+  host: localhost
+ 
+bpController:
+  serviceUrl: http://localhost:8081
+  asyncTaskPath: /process/asynctask/

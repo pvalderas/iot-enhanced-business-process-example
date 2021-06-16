@@ -16,48 +16,51 @@ namespace InformationSystem.Controllers
         [Route("registerpalletrejection")]
         public string RegisterPalletRejection()
         {
-            return "The pallet rejection has been registered";
-
+            string result = "Register Pallet Rejection executed";
+            Console.WriteLine(DateTime.Now + " " + result);
+            return result;
         }
 
         [HttpGet]
         [Route("registerpalletstorage")]
         public string RegisterPalletStorage()
         {
-            return "The pallet storage has been registered";
-
+            string result = "Register Pallet Storage executed";
+            Console.WriteLine(DateTime.Now + " " + result);
+            return result;
         }
 
         [HttpGet]
         [Route("manageshipment")]
         public string ManageShipment()
         {
-            return "The shipment has been managed";
-
+            string result = "Manage Shipment executed";
+            Console.WriteLine(DateTime.Now + " " + result);
+            return result;
         }
 
         [HttpGet]
         [Route("reduceprice")]
         public string RecucePrice()
         {
-            return "The shipment has been managed";
-
+            string result = "Reduce Price executed";
+            Console.WriteLine(DateTime.Now + " " + result);
+            return result;
         }
 
         [HttpGet]
         [Route("registerpalletshipment")]
-        public string RegisterPalletSshipment()
+        public string RegisterPalletShipment()
         {
-            return "The pallet shipment has been registered";
-
+            string result = "Register Pallet Shipment executed";
+            Console.WriteLine(DateTime.Now + " " + result);
+            return result;
         }
 
         [HttpGet]
         [Route("operations")]
         public string GetOperations()
         {
-            Console.WriteLine("Microservice Registered to Eureka");
-            Console.WriteLine("06/15/2021 19:24:10 The pallet storage has been registered");
 
             List<Operation> operations = new List<Operation>();
 
