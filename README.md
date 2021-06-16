@@ -36,8 +36,8 @@ Besides this first product control, a second one is performed over a sample in t
 
 This implementation is composed by 9 microservices:
 
-* 3 microservices that manage IoT devices through Java Technology: RegrigeratorControlSystem, Robot, and TruckContainerSensor. These microservices are endowed with the functionality provided by the IoTDevice module (see the infrastruture repository introduce above), which provide the funcionality to allow the BP Controller to manage IoT devices throw a REST API.
-* 2 microservices that manage and IoT devices and the information system of the organization through .Net Technology: Alarm and InformationSystem. These microservices are .Net apps implemented from scratch and implements the funcionality to allow the BP Controller to manage IoT devices throw a REST API in an ad-hoc way.
+* 3 microservices that manage IoT devices through Java Technology: Alarm, Robot, and TruckContainerSensor. These microservices are endowed with the functionality provided by the IoTDevice module (see the infrastruture repository introduce above), which provide the funcionality to allow the BP Controller to manage IoT devices throw a REST API.
+* 2 microservices that manage and IoT devices and the information system of the organization through .Net Technology: RegrigeratorControlSystem and InformationSystem. These microservices are .Net apps implemented from scratch and implements the funcionality to allow the BP Controller to manage IoT devices throw a REST API in an ad-hoc way.
 * 1 infrastucture microservices: an Eureka service registry
 * 3 microservices for supporing the execution of IoT Enhanced Business Processes: the BP Controller, the Action Peformer and the Context Manager. See the infrastruture repository introduce above for additional informaión about these microservices.
 
