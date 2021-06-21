@@ -39,7 +39,6 @@ namespace InformationSystem
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                this.registerToEureka();
             }
 
             app.UseRouting();
