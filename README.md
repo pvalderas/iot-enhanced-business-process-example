@@ -34,10 +34,11 @@ Besides this first product control, a second one is performed over a sample in t
 
 # Implementation
 
-This implementation is composed by 9 microservices:
+This implementation is composed by 12 microservices:
 
 * 3 microservices that manage IoT devices through Java Technology: Alarm, Robot, and TruckContainerSensor. These microservices are endowed with the functionality provided by the IoTDevice module (see the infrastruture repository introduce above), which provide the funcionality to allow the BP Controller to manage IoT devices throw a REST API.
 * 2 microservices that manage and IoT devices and the information system of the organization through .Net Technology: RegrigeratorControlSystem and InformationSystem. These microservices are .Net apps implemented from scratch and implements the funcionality to allow the BP Controller to manage IoT devices throw a REST API in an ad-hoc way.
+* 3 microservices that manage sensors and publish context data in the Event Bus: ContainerDetector and TemperatureSensor, implemented in Java; and TruckDetector, implemented in .Net.
 * 1 infrastucture microservices: an Eureka service registry
 * 3 microservices for supporing the execution of IoT Enhanced Business Processes: the BP Controller, the Action Peformer and the Context Manager. See the infrastruture repository introduce above for additional informaión about these microservices.
 
@@ -67,22 +68,28 @@ To test the example you can create a IoT Enhanced Business Processes from scratc
 
 # Executing an IoT Enhanced Business Process
 
-The IoT Enhanced Business Process of the example is started when the Context Manager injects the high-level event Container Arrival. To do so, the proper low-level context data should be published in an event-based by supported by RabbitMQ server. Thus, this example assumes you have [RabbitMQ](https://www.rabbitmq.com/) installed.
+The IoT Enhanced Business Process of the example is started when the Context Monitor injects the high-level event Container Arrival. To do so, the proper low-level context data should be published in an event-based bus supported by RabbitMQ server. Thus, this example assumes you have [RabbitMQ](https://www.rabbitmq.com/) installed.
 
-The low-level context data should be publishes in JSON format and is used by the Context Manager to infer that a container is within the WareHouse. For example, considering that a Bluetooth beacon is installed to detect a container, this low-level data could be as follows:
+The low-level context data should be publishes in JSON format and is used by the Context Monitor to infer that a container is within the WareHouse. For example, considering that an Object Detector is installed to detect a container, this low-level data could be as follows:
 
 ```json
 {
-	"device":"BluetoothBeacon",
-	"id": "containerReception",
-	"properties":[
+	"device":"ObjectDetector",
+	"id": "containerReceptionDetector",
+	"property": "Container Availability",
+	"feature": "Container",
+	"dataProps":[
 			{
 				"name":"status",
 				"value" true
+			},
+			{
+				"name":"timestamp",
+				"value" "2020-10-12 10:54:42.997"
 			}
 	]
 	
 }
 ```
 
-This context-data must be pubished in a RabbitMQ queue named "context". In order to test how this context data is processed, the Java application ContextDataTestingApp is provided. This application allow you to publish low-level context data as the example presented above in the RabbitMQ queue.
+This context-data is pubished in by the business microservice ContainerDetector.
