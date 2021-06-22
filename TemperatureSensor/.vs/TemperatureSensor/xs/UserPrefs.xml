@@ -1,15 +1,17 @@
 ﻿<Properties StartupConfiguration="{485EA068-FDF2-40A6-A7BE-2295FFC4F122}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="TemperatureSensor/Program.cs">
     <Files>
-      <File FileName="TemperatureSensor/Program.cs" Line="37" Column="74" />
-      <File FileName="TemperatureSensor/Property.cs" Line="6" Column="24" />
-      <File FileName="TemperatureSensor/ContextProperty.cs" Line="10" Column="30" />
+      <File FileName="TemperatureSensor/Program.cs" Line="40" Column="18" />
+      <File FileName="TemperatureSensor/Property.cs" />
+      <File FileName="TemperatureSensor/ContextProperty.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TemperatureSensor" expanded="True">
-            <Node name="TemperatureSensor" expanded="True" />
+            <Node name="TemperatureSensor" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>

@@ -71,7 +71,7 @@ public class TruckDetector {
 		String status=keyboard.nextLine().toLowerCase();
 		while(!status.equals("true") && !status.equals("false") && !status.equals("t") && !status.equals("f")){
 			System.out.print("Introduce detector status (True/False): ");
-			status=keyboard.nextLine();
+			status=keyboard.nextLine().toLowerCase();
 		}
 		
 		if(status.equals("t")) status="true";
