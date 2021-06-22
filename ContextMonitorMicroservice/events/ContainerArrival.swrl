@@ -1,0 +1,2 @@
+Container(?container) ^ 
+locatedIn(?container, ContainerReception) -> status(?container,"arrivalInWarehouse")

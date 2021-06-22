@@ -1,0 +1,6 @@
+TemperatureObservation(?o) ^ 
+hasResult(?o, ?result) ^ 
+value(?result, ?v) ^ 
+Product (?p) ^ 
+maximumTemperature (?p, ?t) ^ 
+swrlb:greaterThan (?v, ?t) -> temperatureCondition (?p, "TooWarm")

@@ -1,0 +1,2 @@
+Truck(?truck) ^ 
+locatedIn (?truck, TruckReception) -> status(?truck,"arrivalInWarehouse")
