@@ -11,12 +11,4 @@ eureka:
       defaultZone: http://localhost:2222/eureka
   instance:
     metadataMap:
-      connectionType: asynchronous
-
-eventBus:
-  type: rabbitmq
-  host: localhost
- 
-bpController:
-  serviceUrl: http://localhost:8081
-  asyncTaskPath: /process/asynctask/
+      connectionType: synchronous

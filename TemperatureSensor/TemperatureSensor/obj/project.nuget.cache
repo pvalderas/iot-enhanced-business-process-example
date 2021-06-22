@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "OtIDjVaG2MAN5f7sgkMsKL4QXi8H7+dxIFZoveSO7di0JTVG2RlvsbTqwVYyOeSJ8NwBv3oOg6O32keDVs8NEQ==",
+  "success": true,
+  "projectFilePath": "/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/example/TemperatureSensor/TemperatureSensor/TemperatureSensor.csproj",
+  "expectedPackageFiles": [
+    "/Users/pedrovalderas/.nuget/packages/rabbitmq.client/6.2.1/rabbitmq.client.6.2.1.nupkg.sha512",
+    "/Users/pedrovalderas/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
+    "/Users/pedrovalderas/.nuget/packages/system.threading.channels/4.7.1/system.threading.channels.4.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}

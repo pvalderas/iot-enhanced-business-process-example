@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{485EA068-FDF2-40A6-A7BE-2295FFC4F122}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TemperatureSensor/Program.cs">
+    <Files>
+      <File FileName="TemperatureSensor/Program.cs" Line="37" Column="74" />
+      <File FileName="TemperatureSensor/Property.cs" Line="6" Column="24" />
+      <File FileName="TemperatureSensor/ContextProperty.cs" Line="10" Column="30" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TemperatureSensor" expanded="True">
+            <Node name="TemperatureSensor" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.TemperatureSensor PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

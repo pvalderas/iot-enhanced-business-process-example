@@ -1,0 +1,15 @@
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/example/TemperatureSensor/TemperatureSensor/bin/Debug/netcoreapp3.1/TemperatureSensor.deps.json
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/example/TemperatureSensor/TemperatureSensor/bin/Debug/netcoreapp3.1/TemperatureSensor.runtimeconfig.json
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/example/TemperatureSensor/TemperatureSensor/bin/Debug/netcoreapp3.1/TemperatureSensor.runtimeconfig.dev.json
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/example/TemperatureSensor/TemperatureSensor/bin/Debug/netcoreapp3.1/TemperatureSensor.dll
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/example/TemperatureSensor/TemperatureSensor/bin/Debug/netcoreapp3.1/TemperatureSensor.pdb
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/example/TemperatureSensor/TemperatureSensor/bin/Debug/netcoreapp3.1/RabbitMQ.Client.dll
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/example/TemperatureSensor/TemperatureSensor/bin/Debug/netcoreapp3.1/System.Threading.Channels.dll
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/example/TemperatureSensor/TemperatureSensor/obj/Debug/netcoreapp3.1/TemperatureSensor.csproj.AssemblyReference.cache
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/example/TemperatureSensor/TemperatureSensor/obj/Debug/netcoreapp3.1/TemperatureSensor.AssemblyInfoInputs.cache
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/example/TemperatureSensor/TemperatureSensor/obj/Debug/netcoreapp3.1/TemperatureSensor.AssemblyInfo.cs
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/example/TemperatureSensor/TemperatureSensor/obj/Debug/netcoreapp3.1/TemperatureSensor.csproj.CoreCompileInputs.cache
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/example/TemperatureSensor/TemperatureSensor/obj/Debug/netcoreapp3.1/TemperatureSensor.csproj.CopyComplete
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/example/TemperatureSensor/TemperatureSensor/obj/Debug/netcoreapp3.1/TemperatureSensor.dll
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/example/TemperatureSensor/TemperatureSensor/obj/Debug/netcoreapp3.1/TemperatureSensor.pdb
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/example/TemperatureSensor/TemperatureSensor/obj/Debug/netcoreapp3.1/TemperatureSensor.genruntimeconfig.cache
