@@ -93,3 +93,9 @@ The low-level context data should be publishes in JSON format and is used by the
 ```
 
 This context-data is pubished in by the business microservice ContainerDetector.
+
+# Acknowledgement
+
+Grant MCIN/AEI/10.13039/501100011033 funded by: 
+
+<img src="./mcin.png" alt="Ministeria de Cienca e innovación" width="300px"> <img src="./aei.png" alt="Agencia Estatal de Investigación" width="100px"> 
